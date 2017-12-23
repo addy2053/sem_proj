@@ -19,18 +19,25 @@ Route::get('/', function () {
 Route::get('onlinebooking', function () {
     return view('onlinebooking');
 });
+
 Route::get('halls', function () {
     return view('halls');
 });
+
 Route::get('BirthdayEventBooking', function () {
     return view('BirthdayEventBooking');
 });
+
 Route::get('OfficeMeetings', function () {
     return view('OfficeMeetings');
 });
+
 Route::get('listing', function () {
     return view('listing');
 });
+
 Route::get('contactus', function () {
     return view('contactus');
 });
+
+Route::post('feedback','feedbackcontroller@store')->name('feedback');

@@ -21,6 +21,7 @@
         /*Header Adjustments CSS///////////////////*/
         .navbar-inverse {
             margin-bottom: 0px;
+
         }
 
         /*FOOTER START///////////////////*/
@@ -138,7 +139,10 @@
         }
         .navbar-inverse
         {
+            border: solid indigo;
             border-bottom: solid black ;
+            padding-top: 5px;
+            background-color:indigo;
         }
         /*<--contactus css-->*/
         .content-header{
@@ -156,12 +160,12 @@
             font-family: Calibri;
             font-size: large;
             padding-top: 60px;
-            width: 100%;
-            width: 100vw;
-            height: 550px;
+            width: 100%
+            height: 600px;
             background-image: url(images/contactback.jpg);
             background-repeat: no-repeat;
             background-size: cover;
+            padding-bottom: 20px;
         }
         .contact-section{
             padding-top: 40px;
@@ -204,7 +208,7 @@
 </head>
 <body>
 <!--   Header================== -->
-<nav class="navbar navbar-inverse" >
+<nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -216,7 +220,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown">Booking <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -228,7 +232,7 @@
                     </ul>
                 </li>
 
-                <li><a href="listing">Add Listing</a></li>
+                <li ><a  href="listing">Add Listing</a></li>
                 <li><a href="contactus">Contact Us</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -242,9 +246,8 @@
 <!--   Slider================== -->
 
 
-<div id="myCarousel" class="carousel slide">
+
     @yield("slider")
-</div>
 
 
     @yield('section')

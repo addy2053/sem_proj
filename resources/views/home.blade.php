@@ -76,7 +76,7 @@
     <div class="container-fluid">
 
         <div class="col-sm-row">
-            <div class="col-sm-4">
+            <div class="col-sm-4" style="border-right: solid black; border-left: solid black" >
                 <div id="marriage">
                     <h1>Marriage Halls</h1>
 
@@ -84,29 +84,29 @@
                         <p style="font-size: x-large ; font-family: Calibri">This is the best palce to book your marriage Halls.
                             We provide you the wide range of marriage halls with their prices and their images.
                             You don't have to visit marriage hall as you can book it from home
-                            Just click on <a href="onlinebooking.html">Book Marriage Hall</a> and book your desired Hall</p>
+                            Just click on <a href="halls">Book Marriage Hall</a> and book your desired Hall</p>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4" style="border-right: solid black">
                 <div id="birthday">
                     <h1>Birthday Events</h1>
                     <div id="birthback" style="margin-left: 0px">
                         <p style="font-size: x-large ; font-family: Calibri">This is the best palce to book your Birthday Events.
                             We provide you the wide range of Birthday Event celebrating hotels with their prices and their images.
                             You don't have to visit Hotels as you can book it from home
-                            Just click on <a href="onlinebooking.html">Birthday Hotel</a> and book your desired Hall</p>
+                            Just click on <a href="BirthdayEventBooking">Birthday Hotel</a> and book your desired Hall</p>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4" >
+            <div class="col-sm-4"style="border-right: solid black" >
                 <div id="meetings">
                     <h1>Meetings</h1>
                     <div id="meetback">
                         <p style="font-size: x-large ; font-family: Calibri">This is the best palce to book your Meetings hotels.
                             We provide you the wide range of Meeting halls   with their prices and their images.
                             You don't have to visit hotels  as you can book it from anywhere
-                            Just click on <a href="onlinebooking.html">Book Meeting Hall</a> and book your desired beautiful  Hall</p>
+                            Just click on <a href="OfficeMeetings">Book Meeting Hall</a> and book your desired beautiful  Hall</p>
                     </div>
                 </div>
             </div>
