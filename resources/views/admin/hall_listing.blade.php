@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('section')
-    <div class="col-md-12 " style=";border: dotted;margin-top: 25px;margin-bottom: 25px">
-        <table class="table table-responsive">
+    <div class="col-md-12 " style="margin-top: 25px;margin-bottom: 25px">
+        <table class="table table-responsive" border="1">
             <thead >
             <tr > <h3 style="text-align: center;"><b>Halls</b></h3></tr>
             <tr>

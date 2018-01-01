@@ -25,7 +25,7 @@ class On_ADD_hall extends FormRequest
     {
         return [
          'hall_name'=>'string|required|Alpha',
-         'hall_location'=>'required|Alpha| Numeric',
+         'hall_location'=>'required|string',
          'hall_contact'=>'max:11|min:11',
          'hall_city'=>'required|Alpha',
         ];

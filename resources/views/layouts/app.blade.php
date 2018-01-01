@@ -16,7 +16,8 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js" ></script>
+    <script src="../../../public/js/custom.js"></script>
 </head>
 <body>
     <div id="app">
@@ -35,7 +36,7 @@
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('Book Banquette','Book Banquette') }}
-                        {{--<b>Book Banquette</b>--}}
+
                     </a>
                 </div>
 
@@ -47,7 +48,6 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown"><b>Online Booking</b> <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                {{--<li><a href="{{route('onlinebooking')}}"><b>Online Booking</b></a></li>--}}
                                 <li><a href="{{route('halls')}}"><b>Marriage Halls</b></a></li>
                                 <li><a href="{{route('BirthdayEventBooking')}}"><b>Birthday Events</b></a></li>
                                 <li><a href="{{route('OfficeMeetings')}}"><b>Meeting Bookings</b></a></li>
@@ -56,6 +56,8 @@
                         </li>
                         @role(['admin'])
                         <li><a href="{{route('list')}}"><b>Manage List</b></a></li>
+                        <li><a href="{{route('all-users')}}"><b>User's</b></a></li>
+                        <li><a href="{{route('feedback_show')}}"><b>Feed Back</b></a></li>
                         @endrole
 
                         @role(['owner'])
@@ -155,4 +157,5 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
+@yield('script')
 </html>

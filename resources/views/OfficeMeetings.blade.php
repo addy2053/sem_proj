@@ -1,15 +1,16 @@
 @extends('layouts.app')
 @section('section')
     <?php $count = 0; ?>
-    <div class="col-md-12" style="background-color: #133d55;border: dotted">
+    <div class="col-md-12" style="background-color: #133d55;padding-top: 20px"">
 
         @foreach($office as $h)
             <div class="jumbotron col-md-8">
                 <span class="col-sm-4">
                 @foreach($h->image as $ha)
-                        @if(!($count > 4))
+                        @if($count <4)
                             <img  src="/images/{{$ha->name}} " alt=" {{$ha->name}}" width="40%">
                         @endif
+                            <?php $count++; ?>
                 @endforeach
                 </span>
                 <a href="{{route ('list_view',$h->id)}}" target="_blank">{{$h->hall_name}}</a><br>

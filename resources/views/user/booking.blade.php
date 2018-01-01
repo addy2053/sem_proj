@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('section')
-    <div class="col-md-12 " style=";border: dotted;margin-top: 25px;margin-bottom: 25px">
+    <div class="col-md-12 " style="margin-top: 25px;margin-bottom: 25px">
         <h1><u>Booking</u></h1>
-        <table class="table table-responsive">
+        <table class="table table-responsive" border="1">
             <thead>
             <tr>
                 <th>Name</th>

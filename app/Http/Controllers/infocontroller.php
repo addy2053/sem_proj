@@ -11,7 +11,6 @@ class infocontroller extends Controller
     public function index($id)
     {
         $hall=Hall::find($id);
-//    $hall=Hall::paginate(5);
         return view('info_view',compact('hall'));
     }
 

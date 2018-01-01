@@ -18,7 +18,7 @@ class BookingController extends Controller
     {
 //
         $hall=Hall::where('user_id',auth()->id())->get();
-        $booked=Booked::paginate(3);
+        $booked=Booked::paginate(10);
         return view('owner\booking',compact('hall','booked'));
     }
 

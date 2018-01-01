@@ -9,7 +9,7 @@ class hallsController extends Controller
 {
     public function index()
     {
-        $hall=Hall::where('category_id',2)->paginate(5);
+        $hall=Hall::where('category_id',2)->paginate(10);
 
         return view('halls',compact('hall'));
     }

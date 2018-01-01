@@ -2,10 +2,10 @@
 
 @extends('layouts.app')
 @section('section')
-    <div class="col-md-12 " style=";border: dotted;margin-top: 25px;margin-bottom: 25px">
+    <div class="col-md-12 " style=";margin-top: 25px;margin-bottom: 25px">
         <h1><u>Halls</u></h1>
         <a href="{{route('add_list')}}" class="btn btn-success" target="_blank">Add New Hall</a>
-        <table class="table">
+        <table class="table table-responsive" border="1">
             <thead>
             <tr>
                 <th>Name</th>
@@ -34,4 +34,5 @@
             </tbody>
         </table>
     </div>
+    <div class="col-md-12 col-md-offset-3">{{$hall->render()}}</div>
     @endsection

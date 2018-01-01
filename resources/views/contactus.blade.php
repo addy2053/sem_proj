@@ -7,8 +7,8 @@
     </div>
     <div class="contact-section">
         <div class="container">
-            <form method="post" action="">
-                {{--{{route('feedback')}}--}}
+            <form method="post" action="{{route('feedback')}}">
+                {{csrf_field()}}
                 <div class="col-md-6 form-line">
                     <div class="form-group">
                         <label for="name">Your name</label>
@@ -29,8 +29,7 @@
                         <textarea  class="form-control" name="feedback" placeholder="Enter Your Feedback"></textarea>
                     </div>
                     <div>
-
-                        <button type="button" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Submit</button>
+                        <button type="submit" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Submit</button>
                     </div>
 
                 </div>

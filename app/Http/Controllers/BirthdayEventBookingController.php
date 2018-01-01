@@ -10,7 +10,7 @@ class BirthdayEventBookingController extends Controller
     //
     public function index()
     {
-        $birth=Hall::where('category_id',1)->paginate(5);
+        $birth=Hall::where('category_id',1)->paginate(10);
         return view('BirthdayEventBooking',compact('birth'));
     }
 }

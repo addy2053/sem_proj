@@ -22,7 +22,7 @@
                 </div>
 
                 <!-- Address  input-->
-                <div class="form-group {{$errors ->has('hall_location') }}">
+                <div class="form-group {{$errors ->has('hall_location')? 'has-error' :'' }}">
 
                     <div class="col-md-10">
                         <input id="" name="hall_location" placeholder="Hall Address" class="form-control"  type="text"
@@ -49,19 +49,19 @@
                 <div class="form-group {{$errors->has('hall_city') ? 'has-error':''}}">
                     <div class="col-md-6">
                         <input id="City" name="hall_city" placeholder="City" class="form-control"  type="text"
-                               {{--@if(isset($hall))--}}
-                               {{--value="{{$hall->hall_city}}"--}}
-                                {{--@endif--}}
+                               @if(isset($hall))
+                               value="{{$hall->hall_city}}"
+                                @endif
                         >
 
                     </div>
-                    {{--@if($errors->has('hall_city'))--}}
-                        {{--<div class="col-md-12">--}}
-                        {{--<span class="help-block">--}}
-                            {{--<b style="color: black">Enter Valid City</b>--}}
-                            {{--</span>--}}
-                        {{--</div>--}}
-                    {{--@endif--}}
+                    @if($errors->has('hall_city'))
+                        <div class="col-md-12">
+                        <span class="help-block">
+                            <b style="color: black">Enter Valid City</b>
+                            </span>
+                        </div>
+                    @endif
 
                 </div>
 
@@ -102,7 +102,7 @@
                                 @if(isset($hall) and  $hall->category_id==2 )
                                 selected
                                 @endif
-                        >Marry</option>
+                        >Marriage</option>
                         <option value="3"
                                 @if(isset($hall)and  $hall->category_id==3)
                                 selected

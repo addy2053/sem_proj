@@ -12,6 +12,7 @@
 */
 
 Route::get('/', function () { return view('home'); })->name('home');
+Route::get('login', function () { return view('auth\login'); })->name('login');  //when error occur then route use hoga
 
 Auth::routes();
 
@@ -24,6 +25,9 @@ Route::group(['middleware' => 'role:admin'], function() {
     Route::get('admin/listing/booked_listing','admin\MangeBookingController@index')->name('b_list');    //booked list
     Route::delete('admin/listing/{h_id}/destory','admin\ManageListController@destroy')->name('hdelete');
     Route::delete('admin/listing/{bh_id}/destory','admin\MangeBookingController@destory')->name('bdelete');
+    Route::get('admin/users','admin\UsersController@index')->name('all-users');
+    Route::get('admin/feedback','contactusController@show')->name('feedback_show');
+
 });
 
 
@@ -44,7 +48,6 @@ Route::group(['middleware' => 'role:owner'], function() {
     Route::get('owner/booking', "BookingController@index")->name('booking');
 
 
-//    Route::get('contactus','contactusController@index' )->name('cont');
 
 });
 
@@ -55,10 +58,11 @@ Route::group(['middleware' => 'role:user'], function() {
 });
 
 
-Route::group(['middleware' => 'role:user'], function() {
+//Route::group(['middleware' => 'role:user'], function() {
+//
+//Route::post('booking/{id}/booked', "user\BookingController@store")->name('uh_booking');    //user booked hall
+//});
 
-Route::post('booking/{id}/booked', "user\BookingController@store")->name('uh_booking');    //user booked hall
-});
 
 Route::get('onlinebooking', function () {
     return view('onlinebooking');})->name('onlinebooking');
@@ -70,5 +74,10 @@ Route::get('OfficeMeetings','OfficeMeetingsController@index')->name('OfficeMeeti
 Route::get('halls','hallsController@index')->name('halls');
 Route::get('contactus','contactusController@index')->name('cont');
 Route::get('listing/{id}/view','infocontroller@index')->name('list_view');
+
+
+
+Route::post('contactus','contactusController@store' )->name('feedback');
+Route::get('booked\date','booked_dateController@index' )->name('booked_date');
 
 

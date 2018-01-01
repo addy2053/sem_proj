@@ -19,7 +19,7 @@
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>Invalid Name</strong>
                                     </span>
                                 @endif
                             </div>
@@ -33,13 +33,29 @@
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>Invalid Name</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('contact') ? ' has-error' : '' }}">
+                            <label for="contac" class="col-md-4 control-label">Contact</label>
+
+                            <div class="col-md-6">
+                            <input id="cont" type="tel" class="form-control" name="contact" value="{{ old('contact') }}" required
+                            placeholder="Enter Correct Number (i.e +92XXXXXXXXXXXX)">
+
+                            @if ($errors->has('contact'))
+                                <span class="help-block">
+                                        <strong>Incorrect phone#</strong>
+                                    </span>
+                            @endif
+                        </div>
+                </div>
+
+
+                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
                             <div class="col-md-6">
@@ -47,7 +63,7 @@
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                        <strong>Incorrect passwrord</strong>
                                     </span>
                                 @endif
                             </div>
@@ -62,13 +78,24 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="select" class="col-md-4 control-label">Select</label>
+
+                            <div class="col-md-6">
+                                <input type="radio" name="role" value="owner" checked><strong>Owner</strong>
+                                <input type="radio" name="role" value="user"><Strong>User</Strong>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     Register
                                 </button>
                             </div>
                         </div>
+
                     </form>
+
                 </div>
             </div>
         </div>
