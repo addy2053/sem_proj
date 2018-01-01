@@ -15,11 +15,9 @@
                 <th>Actions</th>
             </tr>
             </thead>
-
             <tbody>
             @foreach($hall as $art)
                 <tr>
-
                     <td>{{$art->hall_name}}</td>
                     <td>{{$art->hall_location}}</td>
                     <td>{{$art->hall_contact}}</td>
@@ -29,12 +27,11 @@
                             {{csrf_field()}}
                             {{method_field('DELETE')}}
                             <button class="btn btn-danger btn-toolbar" type="submit">Delete</button>
-                        </form></td>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
             </tbody>
-
-
         </table>
     </div>
     @endsection

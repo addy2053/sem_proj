@@ -35,7 +35,7 @@ Route::group(['middleware' => 'role:owner'], function() {
     Route::get('owner/listing/add_hall/create',"owner\ManageHallListController@create" )->name('add_list');
 
     Route::post('owner/listing', "owner\ManageHallListController@store")->name('save_list');
-
+    Route::patch('owner/listing/{id}', "owner\ManageHallListController@update")->name('edit_list');
     Route::delete('owner/booking/{id}/destroy','owner\ManagebookingListController@destroy')->name('c_booking');   //cancel booking
 
     Route::delete('owner/listing/{id}/destroy','owner\ManageHallListController@destroy')->name('h_delete');   //hall record dlete
@@ -48,10 +48,16 @@ Route::group(['middleware' => 'role:owner'], function() {
 
 });
 
-Route::group(['middleware' => 'role:owner|user'], function() {
+Route::group(['middleware' => 'role:user'], function() {
+    Route::get('user/booking', "user\BookingController@index")->name('u_booking');
+    Route::post('booking/{id}/booked', "user\BookingController@store")->name('uh_booking');    //user booked hall
+
+});
 
 
+Route::group(['middleware' => 'role:user'], function() {
 
+Route::post('booking/{id}/booked', "user\BookingController@store")->name('uh_booking');    //user booked hall
 });
 
 Route::get('onlinebooking', function () {

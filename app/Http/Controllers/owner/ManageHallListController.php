@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\owner;
 
 use App\Hall;
+use App\Image;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
+use App\Http\Requests\On_ADD_hall;
 
 class ManageHallListController extends Controller
 {
@@ -36,7 +39,7 @@ class ManageHallListController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(On_ADD_hall $request)
     {
         $hall=new Hall();
         $hall->hall_name=$request->hall_name;
@@ -46,8 +49,19 @@ class ManageHallListController extends Controller
         $hall->user_id=auth()->id();
         $hall->category_id=$request->category;
         $hall->save();
+
+
+        for ($i=0;$i<sizeof($request->images);$i++)
+        {
+            $image = new Image();
+            $image->hall_id = $hall->id;
+            $image->name = $request->images[$i];
+//            $request->images[$i]->move('/images/');
+//            $request->images[$i]->move('/images/');
+//            $request->file('images[]')->move('/images/','$image->name');
+            $image->save();
+        }
         return  redirect(url('/owner/listing'));
-//        return  redirect(url('owner_listing'));
     }
 
     /**
@@ -82,7 +96,20 @@ class ManageHallListController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $hall=Hall::find($id);
+        $hall->hall_name=$request->hall_name;
+        $hall->hall_location=$request->hall_location;
+//        $hall->hall_city=$request->hall_city;
+        $hall->hall_contact=$request->hall_contact;
+        $hall->category_id=$request->category;
+        $hall->save();
+
+
+        $image=new Image();
+        $image->name=$request->images[0];
+        $image->hall_id=$hall->id;
+        $image->save();
+        return  redirect(url('/owner/listing'));
     }
 
     /**

@@ -45,28 +45,32 @@
                         &nbsp;
                         <li class="active"><a href="/"><b>Home</b></a></li>
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown"><b>Booking</b> <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown"><b>Online Booking</b> <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="{{route('onlinebooking')}}"><b>Online Booking</b></a></li>
+                                {{--<li><a href="{{route('onlinebooking')}}"><b>Online Booking</b></a></li>--}}
                                 <li><a href="{{route('halls')}}"><b>Marriage Halls</b></a></li>
                                 <li><a href="{{route('BirthdayEventBooking')}}"><b>Birthday Events</b></a></li>
                                 <li><a href="{{route('OfficeMeetings')}}"><b>Meeting Bookings</b></a></li>
 
                             </ul>
                         </li>
-                        @role('admin')
+                        @role(['admin'])
                         <li><a href="{{route('list')}}"><b>Manage List</b></a></li>
                         @endrole
 
-                        @role('owner')
-                        <li><a href="{{route('owner_list')}}"><b>Manage List</b></a></li>
+                        @role(['owner'])
+                        <li><a href="{{route('owner_list')}}"><b>Hall's List</b></a></li>
                         @endrole
 
-                        @role('owner'or'admin')
+                        @role(['owner'])
                         <li><a href="{{route('booking')}}"><b>Booking</b></a></li>
                         @endrole
-                        <li><a href="{{route('cont')}}"><b>Contact Us </b></a></li>
 
+                        @role(['user'])
+                        <li><a href="{{route('u_booking')}}"><b>Booking</b></a></li>
+                        @endrole
+
+                        <li><a href="{{route('cont')}}"><b>Contact Us </b></a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
