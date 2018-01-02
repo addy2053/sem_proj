@@ -9,6 +9,7 @@
                 <th>Hall_Name</th>
                 <th>Hall_Location</th>
                 <th>Hall_Contact</th>
+                <th>Hall_City</th>
                 <th>Hall_Category</th>
                 <th>Booked's_name</th>
                 <th>Booked's_Contact</th>
@@ -22,6 +23,7 @@
                     <td>{{$bh->hall->hall_name}}</td>
                     <td>{{$bh->hall->hall_location}}</td>
                     <td>{{$bh->hall->hall_contact}}</td>
+                    <td>{{$bh->hall->hall_city}}</td>
                     <td>{{$bh->hall->category->category_name }} </td>
                     <td>{{$bh->user->name }} </td>
                     <td>{{$bh->user->name }} </td>
@@ -30,7 +32,7 @@
                         <form action="{{route('bdelete', $bh->id)}}" class="" method="POST">
                             {{csrf_field()}}
                             {{method_field('DELETE')}}
-                            <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                            <button class=" fa fa-trash" type="submit">Delete</button>
                         </form>
                     </td>
                 </tr>

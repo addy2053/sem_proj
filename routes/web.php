@@ -57,6 +57,12 @@ Route::group(['middleware' => 'role:user'], function() {
 
 });
 
+Route::group(['middleware' => 'role:owner'], function() {
+    Route::get('user/edit-profile', "edit_profileController@show")->name('edit_profile');    //name is a id but for display use name
+    Route::patch('user/{id}', "edit_profileController@update")->name('save_edit_profile');    //user booked hall
+
+});
+
 
 //Route::group(['middleware' => 'role:user'], function() {
 //
@@ -81,3 +87,8 @@ Route::post('contactus','contactusController@store' )->name('feedback');
 Route::get('booked\date','booked_dateController@index' )->name('booked_date');
 
 
+//searchbar
+
+Route::post('BirthdayHall\search','BirthdayEventBookingController@search' )->name('search_birthday');
+Route::post('halls\search','hallsController@search' )->name('search_marriage');
+Route::post('OfficeMeetings\search','OfficeMeetingsController@search' )->name('search_meeting');

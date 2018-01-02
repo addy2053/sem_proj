@@ -4,13 +4,14 @@
 @section('section')
     <div class="col-md-12 " style=";margin-top: 25px;margin-bottom: 25px">
         <h1><u>Halls</u></h1>
-        <a href="{{route('add_list')}}" class="btn btn-success" target="_blank">Add New Hall</a>
+        <a href="{{route('add_list')}}" class="btn btn-success glyphicon glyphicon-floppy-save" target="_blank" style="margin-bottom: 10px"> Add New Hall</a>
         <table class="table table-responsive" border="1">
             <thead>
             <tr>
                 <th>Name</th>
                 <th>Location</th>
                 <th>Contact</th>
+                <th>City</th>
                 <th>Category</th>
                 <th>Actions</th>
             </tr>
@@ -21,14 +22,21 @@
                     <td>{{$art->hall_name}}</td>
                     <td>{{$art->hall_location}}</td>
                     <td>{{$art->hall_contact}}</td>
+                    <td>{{$art->hall_city}}</td>
                     <td>{{$art->category->category_name}}</td>
-                    <td><a href="{{route('h_edit',$art->id)}}" class="btn btn-info btn-toolbar" target="_blank">Edit</a>
+
+                    <td>
+                        <div class="col-sm-4">
+                            <a href="{{route('h_edit',$art->id)}}" class="glyphicon glyphicon-edit" target="_blank">Edit</a>
+                        </div>
                      <form action="{{route('h_delete',$art->id)}}" class="form-inline inline" method="POST">
                             {{csrf_field()}}
                             {{method_field('DELETE')}}
-                            <button class="btn btn-danger btn-toolbar" type="submit">Delete</button>
+                            <button class=" fa fa-trash" type="submit" > </button>
                         </form>
+
                     </td>
+
                 </tr>
             @endforeach
             </tbody>

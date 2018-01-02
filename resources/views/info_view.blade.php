@@ -9,8 +9,9 @@
                         <label for="name" style="margin-right: 48px"><b>Name</b ></label> {{$hall->hall_name}}<br>
                         <label for="address" style="margin-right: 30px"><b>Address</b ></label> {{$hall->hall_location}}<br>
                         <label for="phone#" style="margin-right: 33px"><b>Phone # </b></label>{{$hall->hall_contact}}<br>
+                        <label for="city" style="margin-right: 72px"><b>City</b></label>{{$hall->hall_city}}<br>
                         <label for="owner_name" style="margin-right: 48px"><b>Owner </b></label>{{$hall->user->name}}<br>
-                        <label for="contact" style="margin-right: 34px"><b>Phone # </b></label>{{$hall->category->category_name.' hall'}}<br>
+                        <label for="contact" style="margin-right: 34px"><b>Phone # </b></label>{{$hall->user->contact}}<br>
                         <label for="category" style="margin-right: 28px"><b>Category </b></label>{{$hall->category->category_name.' hall'}}<br>
 
                     </div>

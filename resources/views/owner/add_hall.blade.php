@@ -4,7 +4,8 @@
 
     <h1>Add new Hall</h1>
     <div class="col-md-12  bg-brown">
-    <form action="{{route('save_list')}}" method="post" class="form-horizontal marginT20" onsubmit="return validate()" >
+    <form action="{{route('save_list')}}" method="post" class="form-horizontal marginT20" onsubmit="return validate();"
+          enctype="multipart/form-data">
         @include('owner._form')
         {{csrf_field()}}
         <div class="form-group " >

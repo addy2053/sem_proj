@@ -20,6 +20,24 @@ class EntrustSetupTables extends Migration
             $table->timestamps();
         });
 
+        DB::table('roles')->insert([
+                'name' => 'admin',
+                'display_name' => 'Admin',
+                'description' => 'Admin can view every thing',
+            ]
+        );
+        DB::table('roles')->insert([
+                'name' => 'owner',
+                'display_name' => 'owner',
+                'description' => 'Owner can add,update halls and see booking ',
+            ]
+        );
+        DB::table('roles')->insert([
+                'name' => 'user',
+                'display_name' => 'User',
+                'description' => 'USer can book halls',
+            ]
+        );
         // Create table for associating roles to users (Many-to-Many)
         Schema::create('role_user', function (Blueprint $table) {
             $table->integer('user_id')->unsigned();
@@ -31,8 +49,17 @@ class EntrustSetupTables extends Migration
                 ->onUpdate('cascade')->onDelete('cascade');
 
             $table->primary(['user_id', 'role_id']);
-        });
 
+
+
+
+        });
+//assign admin role
+        DB::table('role_user')->insert([
+                'user_id' => '1',
+                'role_id' => '1',
+            ]
+        );
         // Create table for storing permissions
         Schema::create('permissions', function (Blueprint $table) {
             $table->increments('id');

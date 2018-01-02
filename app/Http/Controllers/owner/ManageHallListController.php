@@ -47,23 +47,38 @@ class ManageHallListController extends Controller
         $hall=new Hall();
         $hall->hall_name=$request->hall_name;
         $hall->hall_location=$request->hall_location;
-//        $hall->hall_city=$request->hall_city;
+        $hall->hall_city=$request->hall_city;
         $hall->hall_contact=$request->hall_contact;
         $hall->user_id=auth()->id();
         $hall->category_id=$request->category;
         $hall->save();
 
-        if($request->has('images')) {
-            for ($i = 0; $i < sizeof($request->images); $i++) {
+//        if($request->has('images')) {
+//            for ($i = 0; $i < sizeof($request->images); $i++) {
+//                $image = new Image();
+//                $image->hall_id = $hall->id;
+//                $image->name = $request->images[$i];
+//
+//
+//                $image->save();
+//
+//            }
+//
+//        }
+
+        if($request->file('images'))
+        {
+            $files = $request->file('images');
+            foreach($files as $file){
+                $name=$file->getClientOriginalName();
+                $file->move('images',$name);
+
+//save images into databe
                 $image = new Image();
                 $image->hall_id = $hall->id;
-                $image->name = $request->images[$i];
-
-
+                $image->name =  $name;
                 $image->save();
-
             }
-
         }
         return  redirect(url('/owner/listing'));
     }
@@ -109,12 +124,36 @@ class ManageHallListController extends Controller
         $hall->save();
 
 
-        for ($i = 0; $i < sizeof($request->images); $i++) {
-            $image = new Image();
-            $image->hall_id = $hall->id;
-            $image->name = $request->images[$i];
-            $image->save();
+        if($request->file('images'))
+        {
+            $files = $request->file('images');
+            foreach($files as $file){
+                $name=$file->getClientOriginalName();
+                $file->move('images',$name);
+
+//save images into databe
+                $image = new Image();
+                $image->hall_id = $hall->id;
+                $image->name =  $name;
+                $image->save();
+            }
         }
+
+//        for ($i = 0; $i < sizeof($request->images); $i++) {
+//            $image = new Image();
+//            $image->hall_id = $hall->id;
+//            $image->name = $request->images[$i];
+//            $image->save();
+//        }
+//
+//        if($request->file('images'))
+//        {
+//            $files = $request->file('images');
+//            foreach($files as $file){
+//                $name=$file->getClientOriginalName();
+//                $file->move('images',$name);
+//            }
+//        }
         return  redirect(url('/owner/listing'));
     }
 

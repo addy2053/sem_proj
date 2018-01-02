@@ -8,7 +8,8 @@
                 <th>Name</th>
                 <th>Location</th>
                 <th>Contact</th>
-                <th>Category</th>
+                <th>Contact</th>
+                <th>City</th>
                 <th>Owner_name</th>
                 <th>Owner_Contact</th>
                 <th>Actions</th>
@@ -20,6 +21,7 @@
                     <td>{{$h->hall_name}}</td>
                     <td>{{$h->hall_location}}</td>
                     <td>{{$h->hall_contact}}</td>
+                    <td>{{$h->hall_city}}</td>
                     <td>{{$h->category->category_name }} </td>
                     <td>{{$h->user->name }} </td>
                     <td>{{$h->user->name }} </td>
@@ -28,7 +30,7 @@
                         <form action="{{route('hdelete', $h->id)}}" class="" method="POST">
                             {{csrf_field()}}
                             {{method_field('DELETE')}}
-                            <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                            <button class=" fa fa-trash" type="submit"></button>
                         </form>
                     </td>
                 </tr>

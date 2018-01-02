@@ -1,6 +1,18 @@
 @extends('layouts.app')
 @section('section')
     <?php $count=0; ?>
+    {{--//search bar--}}
+    <form method="post" action="{{route('search_birthday')}}">
+{{csrf_field()}}
+            <div class="input-group col-md-12">
+                <input  name="search" type="text" class="form-control input-lg" placeholder="Search..name/city"  style="height: 50px"/>
+                <span class="input-group-btn">
+                        <button  class="btn btn-info btn-lg " type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+            </div>
+    </form>
 
     <div class="col-md-12" style="padding-top: 20px">
         @foreach($birth as $h)

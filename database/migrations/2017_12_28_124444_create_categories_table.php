@@ -18,6 +18,18 @@ class CreateCategoriesTable extends Migration
             $table->string('category_name');
             $table->timestamps();
         });
+        DB::table('categories')->insert([
+                'category_name' => 'Birthday',
+            ]
+        );
+        DB::table('categories')->insert([
+                'category_name' => 'Marriage',
+            ]
+        );
+        DB::table('categories')->insert([
+                'category_name' => 'Meeting',
+            ]
+        );
     }
 
     /**

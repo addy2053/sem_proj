@@ -13,4 +13,11 @@ class hallsController extends Controller
 
         return view('halls',compact('hall'));
     }
+
+    public function store(Request $request)
+    {
+        $hall=Hall::where('hall_city',$request->search )-> orwhere('hall_name',$request->search)->paginate(10);
+
+        return view('halls',compact('hall'));
+    }
 }

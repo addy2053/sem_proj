@@ -12,4 +12,10 @@ class OfficeMeetingsController extends Controller
         $office=Hall::where('category_id',3)->paginate(10);
         return view('OfficeMeetings',compact('office'));
     }
+
+    public function store(Request $request)
+    {
+        $office=Hall::where('hall_city',$request->search )-> orwhere('hall_name',$request->search)->paginate(10);
+        return view('OfficeMeetings',compact('office'));
+    }
 }

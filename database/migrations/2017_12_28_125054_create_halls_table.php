@@ -18,6 +18,7 @@ class CreateHallsTable extends Migration
             $table->string('hall_name');
             $table->string('hall_location');
             $table->string('hall_contact');
+            $table->string('hall_city');
             $table->integer('user_id')->unsigned(); //owner_id is user id in users table
             $table->integer('category_id')->unsigned();
             $table->timestamps();
