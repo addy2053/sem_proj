@@ -28,6 +28,7 @@ class On_ADD_hall extends FormRequest
          'hall_location'=>'required|string',
          'hall_contact'=>'max:11|min:11',
          'hall_city'=>'required|Alpha',
+            'images' =>'required',
         ];
     }
 }

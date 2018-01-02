@@ -89,6 +89,10 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
+                                        <a href="{{route('edit_profile',Auth::user()->name)}}">
+                                            Edit-profile
+                                        </a>
+
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

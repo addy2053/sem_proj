@@ -12,12 +12,13 @@
             </tr>
             </thead>
             <tbody>
+
             @foreach($users as $h)
                 <tr>
                     <td>{{$h->name}}</td>
                     <td>{{$h->email}}</td>
                     <td>{{$h->contact}}</td>
-                    {{--<td>{{$h->roles}} </td>--}}
+                    <td>{{$h->roles[0]->name}} </td>
                 </tr>
             @endforeach
             </tbody>

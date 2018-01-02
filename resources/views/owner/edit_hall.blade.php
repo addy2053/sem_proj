@@ -2,7 +2,8 @@
 @section('section')
     <h1>Edit Hall Information</h1>
     <div class="col-md-12  bg-brown">
-        <form action="{{route('edit_list',$hall->id)}}" method="post" class="form-horizontal marginT20">
+        <form action="{{route('edit_list',$hall->id)}}" method="post" class="form-horizontal marginT20"
+              enctype="multipart/form-data">
             @include('owner._form')
             {{csrf_field()}}
             {{method_field("PATCH")}}
