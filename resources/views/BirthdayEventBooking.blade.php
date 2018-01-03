@@ -6,17 +6,18 @@
 {{csrf_field()}}
             <div class="input-group col-md-12">
                 <input  name="search" type="text" class="form-control input-lg" placeholder="Search..name/city"  style="height: 50px"/>
-                <span class="input-group-btn">
-                        <button  class="btn btn-info btn-lg " type="submit">
+                <span class="input-group-btn" >
+                        <button  class="btn btn-info btn-lg " type="submit" >
                             <i class="glyphicon glyphicon-search"></i>
                         </button>
                     </span>
             </div>
     </form>
 
-    <div class="col-md-12" style="padding-top: 20px">
+    <div class="col-md-12" style="padding-top: 20px;background-image: url(/images/Birthday.jpg);background-repeat:no-repeat;background-size:cover;height: 500px;">
         @foreach($birth as $h)
-            <div class="jumbotron col-md-8" style="height: 300px">
+            @if($h->category_id ==1)
+            <div class="jumbotron col-md-8" style="background-color: lightgoldenrodyellow">
                 <div class="col-sm-4">
 
                 @foreach($h->image as $ha)
@@ -33,8 +34,10 @@
                 <div class="col-md-12 col-md-offset-9">
                 <a href="{{route ('list_view',$h->id)}}" class="btn btn-info btn-toolbar " target="_blank"
                    style="width: 150px">Booking</a>
+
                 </div>
             </div>
+            @endif
         @endforeach
 
         <span class="col-sm-5"> {{$birth->render()}}</span>

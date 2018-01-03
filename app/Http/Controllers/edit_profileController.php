@@ -24,7 +24,7 @@ class edit_profileController extends Controller
         $user->contact = $request->input('contact');
         $user->save();
 
-       $request->session()->flash('alter', 'Task was successful!');
+        $request->session()->flash('alert-danger', 'Article was deleted!');
        return redirect(url('user/edit-profile'));
 
 

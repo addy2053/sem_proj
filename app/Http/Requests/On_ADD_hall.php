@@ -25,10 +25,10 @@ class On_ADD_hall extends FormRequest
     {
         return [
          'hall_name'=>'string|required|Alpha',
-         'hall_location'=>'required|string',
+         'hall_location'=>'required|string|min:12|max:80',
          'hall_contact'=>'max:11|min:11',
          'hall_city'=>'required|Alpha',
-            'images' =>'required',
+            'category' => 'required',
         ];
     }
 }

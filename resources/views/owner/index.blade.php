@@ -2,10 +2,10 @@
 
 @extends('layouts.app')
 @section('section')
-    <div class="col-md-12 " style=";margin-top: 25px;margin-bottom: 25px">
+    <div class="col-md-12 " style="height: 300px;margin-top: 25px;margin-bottom: 25px;background-color:lightgoldenrodyellow; ">
         <h1><u>Halls</u></h1>
         <a href="{{route('add_list')}}" class="btn btn-success glyphicon glyphicon-floppy-save" target="_blank" style="margin-bottom: 10px"> Add New Hall</a>
-        <table class="table table-responsive" border="1">
+        <table class="table table-responsive" >
             <thead>
             <tr>
                 <th>Name</th>

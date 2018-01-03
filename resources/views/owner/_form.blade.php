@@ -132,13 +132,16 @@
 <div class ="col-md-12 container paddingTB40   ">
     <fieldset>
 
-        <legend>Listing</legend>
+        {{--<legend>Listing</legend>--}}
         <!-- Name of business input-->
         <div class="form-group {{$errors ->has('hall_name')? 'has-error':'' }}">
             <div class="col-md-8">
+
                 <input id="name" name="hall_name" placeholder="Hall Name" class="form-control"  type="text"
                        @if(isset($hall))
                        value="{{$hall->hall_name}}"
+                @else
+                       value="{{old('hall_name')}}"
                         @endif >
 
             </div>
@@ -147,8 +150,11 @@
                         <span class="help-block">
                             <b style="color: black">Enter Valid Hall Name</b>
                             </span>
+
                 </div>
             @endif
+            {{--//js--}}
+           <b> <span class="col-md-12" id="hall_name"style="color: black"></span></b>
         </div>
 
         <!-- Address  input-->
@@ -158,6 +164,8 @@
                 <input id="" name="hall_location" placeholder="Hall Address" class="form-control"  type="text"
                        @if(isset($hall))
                        value="{{$hall->hall_location}}"
+                       @else
+                       value="{{old('hall_location')}}"
                         @endif
                 >
             </div>
@@ -167,7 +175,9 @@
                             <b style="color: black">Enter Valid Hall Location</b>
                             </span>
                 </div>
+
             @endif
+                <b> <span class="col-md-12" id="hall_location"style="color: black"></span></b>
         </div>
 
 
@@ -181,6 +191,8 @@
                 <input id="City" name="hall_city" placeholder="City" class="form-control"  type="text"
                        @if(isset($hall))
                        value="{{$hall->hall_city}}"
+                       @else
+                       value="{{old('hall_city')}}"
                         @endif
                 >
 
@@ -192,7 +204,7 @@
                             </span>
                 </div>
             @endif
-
+            <b> <span class="col-md-12" id="hall_city"style="color: black"></span></b>
         </div>
 
         <!-- Text input-->
@@ -200,9 +212,11 @@
 
 
             <div class="col-md-6">
-                <input id="" name="hall_contact" placeholder="Phone No." class="form-control"  type="text"
+                <input id="" name="hall_contact" placeholder="11 digits phone number i.e 03XXXXXXXXXX" class="form-control"  type="text"
                        @if(isset($hall))
                        value="{{$hall->hall_contact}}"
+                @else
+                       value="{{old('hall_contact')}}"
                         @endif
                 >
             </div>
@@ -213,15 +227,15 @@
                     </span>
                 </div>
             @endif
-
+            <b> <span class="col-md-12" id="hall_contact"style="color: black"></span></b>
         </div>
 
 
         <div class="form-group">
             <div class="col-md-6">
                 <label style="color:#666666"><b>Category :</b></label>
-                <select  name="category" required="required">
-                    <option selected  hidden>select...</option>
+                <select  name="category" >
+                    <option value="" selected  hidden>select...</option>
                     <option value="1"
                             @if(isset($hall) and  $hall->category_id==1)
                             selected
@@ -240,6 +254,7 @@
                     >Meeting</option>
                 </select>
             </div>
+            <b> <span class="col-md-12" id="hall_category"style="color: black"></span></b>
         </div>
 
         <!-- File Button -->

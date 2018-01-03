@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="margin-top: 130px;">
+<div class="container" style="padding-top: 130px;padding-bottom: 50px">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+                <div class="panel-heading"><b>Login</b></div>
 
-                <div class="panel-body">
+                <div class="panel-body" style="background-color: lightgoldenrodyellow;">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 

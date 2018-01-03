@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('section')
-    <h1>Edit Hall Information</h1>
+
+    <div style="background-color:black;color: whitesmoke;height: 60px;padding-top: 0.3px;text-align: center">    <h1>Edit Hall Information</h1>
+    </div>
     <div class="col-md-12  bg-brown">
         <form action="{{route('edit_list',$hall->id)}}" method="post" class="form-horizontal marginT20"
               enctype="multipart/form-data">

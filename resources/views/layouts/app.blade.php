@@ -17,9 +17,10 @@
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js" ></script>
-    <script src="../../../public/js/custom.js"></script>
+    <script src="/js/custom.js"></script>
 </head>
 <body>
+<div id="body">
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -44,7 +45,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
-                        <li class="active"><a href="/"><b>Home</b></a></li>
+                        <li class=""><a href="/"><b>Home</b></a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown"><b>Online Booking</b> <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -88,10 +89,13 @@
                                 </a>
 
                                 <ul class="dropdown-menu">
+
                                     <li>
+                                        @role(['owner','user'])
                                         <a href="{{route('edit_profile',Auth::user()->name)}}">
                                             Edit-profile
                                         </a>
+                                        @endrole
 
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -121,9 +125,9 @@
     {{--login/registration--}}
 
     <!--   FOOTER START================== -->
- <div  style="border: solid #2a88bd;overflow: hidden;">
-    <footer class="footer">
-        <div class="container">
+ <div  class="" style="border: solid thin;overflow: hidden;">
+    <footer class="footer ">
+        <div class="container ">
             <div class="row ">
                 <div class="col-sm-3">
                     <h4 class="title">About us</h4>
@@ -158,6 +162,7 @@
         </div>
     </footer>
  </div>
+</div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

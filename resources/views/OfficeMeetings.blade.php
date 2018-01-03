@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('section')
-    <form method="post" action="{{route ('search_meeting')}}" accept-charset="UTF-8">
+    <form method="post" action="{{route ('search_meeting')}}">
         {{csrf_field()}}
         <div id="custom-search-input">
             <div class="input-group col-md-12">
-                <input  type="text" class="form-control input-lg" placeholder="Search..name/city"  style="height: 50px"/>
+                <input  name='search' type="text" class="form-control input-lg" placeholder="Search..name/city"  style="height: 50px"/>
                 <span class="input-group-btn">
                         <button  class="btn btn-info btn-lg" type="submit">
                             <i class="glyphicon glyphicon-search"></i>
@@ -14,10 +14,11 @@
         </div>
     </form>
     <?php $count = 0; ?>
-    <div class="col-md-12" style="background-color: #133d55;padding-top: 20px"">
+    <div class="col-md-12" style=" padding-top: 20px;background-image: url(/images/office.jpg);background-repeat:no-repeat;background-size:cover;height: 500px;">
 
         @foreach($office as $h)
-            <div class="jumbotron col-md-8">
+            @if($h->category_id ==3)
+            <div class="jumbotron col-md-8" style="height: 300px;background-color: lightgoldenrodyellow">
                 <span class="col-sm-4">
                 @foreach($h->image as $ha)
                         @if($count <4)
@@ -34,6 +35,7 @@
                        style="width: 150px">Booking</a>
                 </div>
             </div>
+            @endif
         @endforeach
 
         <span class="col-sm-5"> {{$office->render()}}</span>

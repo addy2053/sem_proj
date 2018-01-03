@@ -16,7 +16,8 @@ class BirthdayEventBookingController extends Controller
 
     public function search(Request $request)
     {
-        $birth=Hall::where('hall_city',$request->search )-> orwhere('hall_name',$request->search)->paginate(10);
+        $birth=Hall::where('hall_city', $request->search)-> orwhere('hall_name',$request->search)
+           ->paginate(10);
         return view('BirthdayEventBooking',compact('birth'));
     }
 }

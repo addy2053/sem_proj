@@ -139,21 +139,7 @@ class ManageHallListController extends Controller
             }
         }
 
-//        for ($i = 0; $i < sizeof($request->images); $i++) {
-//            $image = new Image();
-//            $image->hall_id = $hall->id;
-//            $image->name = $request->images[$i];
-//            $image->save();
-//        }
-//
-//        if($request->file('images'))
-//        {
-//            $files = $request->file('images');
-//            foreach($files as $file){
-//                $name=$file->getClientOriginalName();
-//                $file->move('images',$name);
-//            }
-//        }
+
         return  redirect(url('/owner/listing'));
     }
 
@@ -166,8 +152,17 @@ class ManageHallListController extends Controller
     public function destroy($id)
     {
         $b=Hall::find($id);
-        $b->delete();
+       $image=Image::all();
 
+       foreach ($image as $img)
+       {
+           if($id==$img->hall_id)
+           {
+               $filename = public_path().'/images/'.$img->name;
+               \File::delete($filename);
+           }
+       }
+     $b->delete();
         return  redirect(url('/owner/listing'));
     }
 }

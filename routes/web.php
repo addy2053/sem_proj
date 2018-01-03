@@ -56,8 +56,8 @@ Route::group(['middleware' => 'role:user'], function() {
     Route::post('booking/{id}/booked', "user\BookingController@store")->name('uh_booking');    //user booked hall
 
 });
-
-Route::group(['middleware' => 'role:owner'], function() {
+//edit prfile
+Route::group(['middleware' => 'role:owner|user'], function() {
     Route::get('user/edit-profile', "edit_profileController@show")->name('edit_profile');    //name is a id but for display use name
     Route::patch('user/{id}', "edit_profileController@update")->name('save_edit_profile');    //user booked hall
 

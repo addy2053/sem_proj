@@ -132,11 +132,13 @@
 }
 .navbar-inverse
 {
-    border: solid indigo;
-    border-bottom: solid black ;
+    border-bottom: solid black 6px;
     padding-top: 5px;
-    background-color:indigo;
+    background-color:darkblue;
 }
+/*#app-navbar-collapse ul li a:hover {*/
+    /*background-color: black;*/
+/*}*/
 /*<--contactus css-->*/
 .content-header{
     font-family: 'Oleo Script', cursive;
@@ -196,9 +198,12 @@ textarea.form-control {
     color: #fff;
 
 }
-body
+#body
 {
-    background-color: #0d3625;
+   background-image: url("/images/background.jpg");
+   background-repeat: no-repeat;
+    background-size:cover ;
+
 
 }
 
@@ -314,5 +319,5 @@ form-control::-webkit-input-placeholder { color: black; }
   }
 /*wdith when click on it*/
 input[type=text]:focus {
-    width: 90%;
+    width: 100%;
 }

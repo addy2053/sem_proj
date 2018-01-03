@@ -13,7 +13,7 @@ class OfficeMeetingsController extends Controller
         return view('OfficeMeetings',compact('office'));
     }
 
-    public function store(Request $request)
+    public function search(Request $request)
     {
         $office=Hall::where('hall_city',$request->search )-> orwhere('hall_name',$request->search)->paginate(10);
         return view('OfficeMeetings',compact('office'));

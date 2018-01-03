@@ -54,7 +54,7 @@
 @endsection
 
 @section('section')
-    <div class="col-md-10 text-info col-lg-offset-1 jumbotron" id="section" style="text-align: center">
+    <div class="col-md-10 text-info col-lg-offset-1 jumbotron" id="section" style="text-align: center;margin-top: 100px;margin-bottom: 100px">
         <p>This is the best palce to book your marriage Halls.
             We provide you the wide range of marriage halls with their prices and their images.
             You don't have to visit marriage hall as you can book it from home.This is the best palce to book your marriage Halls.
@@ -74,9 +74,9 @@
 
     <!--   Content================== -->
 
-    <div class="container-fluid">
+    <div class="container-fluid" >
 
-        <div class="col-sm-row">
+        <div class="col-sm-row" >
             <div class="col-sm-4" style="border-right: solid black; border-left: solid black" >
                 <div id="marriage">
                     <h1>Marriage Halls</h1>
