@@ -128,7 +128,7 @@ class ManageHallListController extends Controller
         {
             $files = $request->file('images');
             foreach($files as $file){
-                $name=$file->getClientOriginalName();
+                $name=time().$file->getClientOriginalName();
                 $file->move('images',$name);
 
 //save images into databe

@@ -14,17 +14,19 @@
         </div>
     </form>
     <?php $count = 0; ?>
-    <div class="col-md-12" style=" padding-top: 20px;background-image: url(/images/office.jpg);background-repeat:no-repeat;background-size:cover;height: 500px;">
+    <div class="col-md-12" style=" padding-top: 20px;background-image: url(/images/office.jpg);background-repeat:no-repeat;background-size:cover;min-height: 500px;">
 
         @foreach($office as $h)
             @if($h->category_id ==3)
             <div class="jumbotron col-md-8" style="height: 300px;background-color: lightgoldenrodyellow">
-                <span class="col-sm-4">
+                <span class="img-responsive col-sm-4">
+                    <?php $count++; ?>
                 @foreach($h->image as $ha)
                         @if($count <4)
-                            <img  src="/images/{{$ha->name}} " alt=" {{$ha->name}}" width="40%">
+                            <img  src="/images/{{$ha->name}} " alt=" {{$ha->name}}" width="80%">
+                            <?php $count=0; ?>
                         @endif
-                            <?php $count++; ?>
+
                 @endforeach
                 </span>
                 <a href="{{route ('list_view',$h->id)}}" target="_blank">{{$h->hall_name}}</a><br>

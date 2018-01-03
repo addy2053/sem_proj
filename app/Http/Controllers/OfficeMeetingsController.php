@@ -9,7 +9,7 @@ class OfficeMeetingsController extends Controller
 {
     public function index()
     {
-        $office=Hall::where('category_id',3)->paginate(10);
+        $office=Hall::where('category_id',3)->paginate(5);
         return view('OfficeMeetings',compact('office'));
     }
 

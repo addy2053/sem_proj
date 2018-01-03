@@ -7,10 +7,10 @@ function add_hall_validate() {
    var category=document.getElementsByName('category');
 
 
-    if(!(name[0].value.match (/^[A-Za-z]+$/))) {
-        document.getElementById("hall_name").innerHTML="Enter Valid Hall Name";
-        return false;
-    }
+    // if(!(name[0].value.match (/^[A-Za-z '-]$/))) {
+    //     document.getElementById("hall_name").innerHTML="Enter Valid Hall Name";
+    //     return false;
+    // }
 
     if(((location[0].value.length < 10) || (location[0].value.length > 80))) {
 
